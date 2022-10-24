@@ -1,5 +1,8 @@
 # NYU Jterm Placer 
 
+![Image of Version](https://img.shields.io/badge/version-v1.0-green)
+![Image of Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)
+
 ## Introduction
 
 In NYU jterms are short 3 week intensive courses that can be abroad, on campus, or with an international trip.
