@@ -11,12 +11,6 @@ Since jterm courses have very limited capacities, applying to jterms is differen
 
 However after the last jterm placement, this project is a proposal for a better jterm placer algorithm!
 
-#### Code in Action!
-
-This is a sample run with 5 students and 3 courses, the student and course input text files for this sample can be found in <a href"samples">samples</a>
-
-![sample-01 graph visualisation](images/sample_matching.png "")
-
 ## Instructions
 
 This is a commandline tool that takes three arguments, student information file, course information file, output file to write the resulting matching, in that specific order. The format of the files must be as follows.
@@ -39,6 +33,15 @@ Course information file format
 #### General Idea
 
 This algorithm uses a modified version of weighted MCBM (Maximum Cardinality Bipartite Matching) to do the placing in the maximum possible happiness. The graph is modelled such that students are nodes on one side, courses are nodes on the other side and choices are weighted edges connecting a student and a course. The weights are chosen so that the higher the choice is up the students choice list the lower the weight and the algorithm finds the minimum matching, and therefore producing the maximum happiness.
+
+#### Code in Action!
+
+This is a sample run with 5 students and 3 courses, the student and course input text files for this sample can be found in [samples](samples).
+
+![sample-01 graph visualisation](images/sample_matching.png "")
+
+> In this visualisation, the graph on the left is the initial graph of chioces and the one on the right is the resulting graph of placements.
+> In this visualisation, the heavier the edge is the higher the choice is up the student chioce list, and the heavier the node border is the higher the priority the student has (seniors, then sophomores, etc.)
 
 #### Algorithm Details
 
