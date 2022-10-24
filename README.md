@@ -13,8 +13,6 @@ However after the last jterm placement, this project is a proposal for a better 
 
 ## Instructions
 
-#### Installation
-
 Open the terminal and run the following command
 
 ```
@@ -60,11 +58,9 @@ If you want the output to be placed in a file you can run
 
 ## How it works
 
-#### General Idea
-
 This algorithm uses a modified version of weighted MCBM (Maximum Cardinality Bipartite Matching) to do the placing in the maximum possible happiness. The graph is modelled such that students are nodes on one side, courses are nodes on the other side and choices are weighted edges connecting a student and a course. The weights are chosen so that the higher the choice is up the students choice list the lower the weight and the algorithm finds the minimum matching, and therefore producing the maximum happiness.
 
-#### Code in Action!
+## Code in Action!
 
 This is a sample run with 5 students and 3 courses, the student and course input text files for this sample can be found in [samples](samples).
 
@@ -73,9 +69,9 @@ This is a sample run with 5 students and 3 courses, the student and course input
 > In this visualisation, the graph on the left is the initial graph of chioces and the one on the right is the resulting graph of placements.
 > In this visualisation, the heavier the edge is the higher the choice is up the student chioce list, and the heavier the node border is the higher the priority the student has (seniors, then sophomores, etc.)
 
-#### Algorithm Details
+## Algorithm Details
 
-The weighted MCBM is solved by modelling the problem as a flow graph with costs and getting the MCMF (Minimum Cost Maximum Flow).
+The weighted MCBM is solved by modelling the problem as a flow graph with costs and getting the MCMF (Minimum Cost Maximum Flow), using a modified version of Edmonds-Karp algorithm, where we substitute the bfs with Bellman-Ford-Moore's algorithm in order to calculate the augmenting path of least cost. Notice that we don't use Dijkstra's algorithm as negative costs are possible.
 
 First notice that each edge has two values, the cost (weight) and the capacity. The cost is the amount it contributes to the total happiness score and the capacity is the amount of flow (the number of students) that can go through this edge.
 
