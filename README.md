@@ -11,7 +11,13 @@ Since jterm courses have very limited capacities, applying to jterms is differen
 
 However after the last jterm placement, this project is a proposal for a better jterm placer algorithm!
 
-## How to use it
+#### Code in Action!
+
+This is a sample run with 5 students and 3 courses, the student and course input text files for this sample can be found in <a href"samples">samples</a>
+
+<img src"images/sample_matching.png" />
+
+## Instructions
 
 This is a commandline tool that takes three arguments, student information file, course information file, output file to write the resulting matching, in that specific order. The format of the files must be as follows.
 

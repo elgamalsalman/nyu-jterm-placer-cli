@@ -9,6 +9,10 @@
 #include <set>
 #include <cassert>
 
+std::ostream& operator<<(std::ostream& os, const Matcher::Edge &e) {
+	os << "{" << e.dest << ", " << e.cap << ", " << e.cost << ", " << e.flow << "}";
+}
+
 int Matcher::match(std::vector<Student> &students, std::vector<Course> &courses) {
 	// curate a list of all possible courses
 	std::set<std::string> course_ids;
@@ -34,6 +38,17 @@ int Matcher::match(std::vector<Student> &students, std::vector<Course> &courses)
 	const int node_count = student_count + course_count + 2;
 	std::vector<std::vector<Edge>> adj;
 	adj.assign(node_count, std::vector<Edge>());
+
+	auto print_adj = [&adj, node_count]() {
+		std::cerr << "// adj:-\n";
+		for (int i = 0; i < node_count; i++) {
+			std::cerr << "// " << i << ":";
+			for (Edge e : adj[i]) {
+				std::cerr << " " << e;
+			}
+			std::cerr << std::endl;
+		}
+	};
 
 	// add edges between student and course nodes
 	for (int student_ind = 0; student_ind < student_count; student_ind++) {
@@ -78,17 +93,12 @@ int Matcher::match(std::vector<Student> &students, std::vector<Course> &courses)
 		adj[sink].push_back({course_node, 0, -cost, ind});
 	}
 
-	std::cerr << "// adj:-\n";
-	for (int i = 0; i < node_count; i++) {
-		std::cerr << "// " << i << ":";
-		for (Edge e : adj[i]) {
-			std::cerr << " " << e.dest;
-		}
-		std::cerr << std::endl;
-	}
+	// print_adj();
 
 	// Minimum Cost Maximum Flow
 	int total_cost = mcmf(node_count, source, sink, adj);
+
+	// print_adj();
 
 	// set placements and place unplaced students in empty course slots
 	for (int student_ind = 0; student_ind < student_count; student_ind++) {
@@ -97,7 +107,7 @@ int Matcher::match(std::vector<Student> &students, std::vector<Course> &courses)
 		for (int edge_ind = 0; edge_ind < Student::choice_count; edge_ind++) {
 			Edge &edge = adj[student_ind][edge_ind];
 
-			if (!edge.flow) {
+			if (edge.flow) {
 				is_placed = true;
 				int placed_course_ind = edge.dest - student_count;
 				Course &placed_course = courses[placed_course_ind];

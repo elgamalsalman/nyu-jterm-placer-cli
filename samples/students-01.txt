@@ -1,0 +1,10 @@
+Salman 1
+A B C
+Abdullah 2
+C B A
+Nour 3
+A B C
+Omar 3
+B A C
+Khaled 4
+A C B

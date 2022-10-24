@@ -6,7 +6,7 @@
 
 class Student {
 	public:
-		const inline static int choice_count = 2;
+		inline static int choice_count = 0;
 
 		const std::string name;
 		const int year;

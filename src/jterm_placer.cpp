@@ -23,21 +23,17 @@ int main(int argc, char *argv[]) {
 		dr.read_students(argv[1], students);
 		dr.read_courses(argv[2], courses);
 
-		// debugging
-		std::cerr << "//";
-		for (Student student : students) {
-			std::cerr << student;
-		}
-		std::cerr << '\n';
-
 		// create matchings, throws error for invalid choices
 		Matcher matcher;
 		int cost = matcher.match(students, courses);
 
 		// instantiate data writer and write matching data
 		Data_writer dw;
-		if (argc[3]) 
-		dw.write_matching(argv[3], students);
+		if (argc <= 3) {
+			dw.write_matching(students);
+		} else {
+			dw.write_matching(argv[3], students);
+		}
 		std::cout << "Successful matching with a cost of " << cost << std::endl;
 	} catch (const std::exception &e) {
 		std::cerr << "There was an error : " << e.what() << std::endl;

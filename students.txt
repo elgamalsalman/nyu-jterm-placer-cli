@@ -1,4 +1,0 @@
-Salman 1
-A B
-Abdulluh 1
-B A
