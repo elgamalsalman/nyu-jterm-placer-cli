@@ -15,7 +15,7 @@ However after the last jterm placement, this project is a proposal for a better 
 
 This is a sample run with 5 students and 3 courses, the student and course input text files for this sample can be found in <a href"samples">samples</a>
 
-<img src"images/sample_matching.png" />
+![sample-01 graph visualisation](images/sample_matching.png "")
 
 ## Instructions
 
