@@ -66,8 +66,8 @@ This is a sample run with 5 students and 3 courses, the student and course input
 
 ![sample-01 graph visualisation](images/sample_matching.png "")
 
-> In this visualisation, the graph on the left is the initial graph of chioces and the one on the right is the resulting graph of placements.
-> In this visualisation, the heavier the edge is the higher the choice is up the student chioce list, and the heavier the node border is the higher the priority the student has (seniors, then sophomores, etc.)
+> In this visualisation, the graph on the left is the initial graph of choices and the one on the right is the resulting graph of placements.
+> The heavier the edge is the higher the choice is up the student choice list, and the heavier the node border is the higher the priority the student has (seniors, then sophomores, etc.)
 
 ## Algorithm Details
 
