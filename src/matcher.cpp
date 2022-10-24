@@ -11,6 +11,7 @@
 
 std::ostream& operator<<(std::ostream& os, const Matcher::Edge &e) {
 	os << "{" << e.dest << ", " << e.cap << ", " << e.cost << ", " << e.flow << "}";
+	return os;
 }
 
 int Matcher::match(std::vector<Student> &students, std::vector<Course> &courses) {

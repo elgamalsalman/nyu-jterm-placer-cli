@@ -13,19 +13,49 @@ However after the last jterm placement, this project is a proposal for a better 
 
 ## Instructions
 
-This is a commandline tool that takes three arguments, student information file, course information file, output file to write the resulting matching, in that specific order. The format of the files must be as follows.
+#### Installation
+
+Open the terminal and run the following command
+
+```
+git clone https://github.com/elgamalsalman/nyu-jterm-placer
+```
+
+If you want to build it locally run the following command
+
+```
+g++ -std=c++17 nyu-jterm-placer/src/*.cpp -o main
+```
+
+The nyu-jterm-placer takes three arguments, student information file, course information file, output file to write the resulting matching, in that specific order. The format of the files must be as follows.
 
 Student information file format
+
 ```
 <student name> <student year (1, 2, 3, or 4)>
 <choice 1> <choice 2> ... <choice n>
 ...
 ```
 
+> Note: All students must have the same number of choices
+
 Course information file format
+
 ```
 <course name> <course capacity>
 ...
+```
+
+To run the code locally, first create the `students.txt` and `courses.txt` input files and then run the following command
+
+```
+./main students.txt courses.txt
+```
+
+If you want the output to be placed in a file you can run
+
+```
+./main students.txt courses.txt output.txt
 ```
 
 ## How it works
