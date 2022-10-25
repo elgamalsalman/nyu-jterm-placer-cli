@@ -64,7 +64,7 @@ This algorithm uses a modified version of weighted MCBM (Maximum Cardinality Bip
 
 This is a sample run with 5 students and 3 courses, the student and course input text files for this sample can be found in [samples](samples).
 
-![sample-01 graph visualisation](images/sample_matching.png "")
+![sample-01 graph visualisation](images/sample_diagram.png "")
 
 > In this visualisation, the graph on the left is the initial graph of choices and the one on the right is the resulting graph of placements.
 > The heavier the edge is the higher the choice is up the student choice list, and the heavier the node border is the higher the priority the student has (seniors, then sophomores, etc.).
