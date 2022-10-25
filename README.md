@@ -70,7 +70,7 @@ This is a sample run with 5 students and 3 courses, the student and course input
 > The heavier the edge is the higher the choice is up the student choice list, and the heavier the node border is the higher the priority the student has (seniors, then sophomores, etc.).
 > The dashed edges are of cost zero and have their capacities labelled on them.
 
-## Algorithm Details
+## Algorithmic Details
 
 The weighted MCBM is solved by modelling the problem as a flow graph with costs and getting the MCMF (Minimum Cost Maximum Flow), using a modified version of Edmonds-Karp algorithm, where we substitute the bfs with Bellman-Ford-Moore's algorithm in order to calculate the augmenting path of least cost. Notice that we don't use Dijkstra's algorithm as negative costs are possible.
 
