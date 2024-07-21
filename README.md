@@ -101,3 +101,13 @@ That way we can achieve the effect of giving upperclassmen priority.
 This algorithm will work in O(S * ((S + C) * S)) = O(S<sup>3</sup> + S<sup>2</sup>C) where S is the number of students and C is the number of courses. This is because each run of the bellman-ford-moore algorithm takes O(VE), and it will be ran O(total\_flow) times, and V = O(S + C), and E = O(S * N), where N is the number of choices each student makes.
 
 Given this time complexity, I'd expect the code to run in a few (1-3) seconds for a school like NYUAD with 2000 students and under 100 jterm course options.
+
+## Graphical User Interface
+
+Ths project was later extended in collaboration with my colleagues, Ioane Kapandze, Youssab William and Abdullah Alhussni to have a GUI in order to be more userfriendly for university adminstration.
+
+The GUI was built using Qt, we implemented a user interface to help the user/university upload the list of courses, the list of students and their details and choices. The "Match" button lets the program match the students and the "Export" option lets you save the details to a spreadsheet of the user's choice.
+
+<p align="center">
+	<img src="./images/gui.png" alt="GUI" />
+</p>
